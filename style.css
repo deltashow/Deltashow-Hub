@@ -86,25 +86,51 @@ body {
     100% { transform: translateY(0) translateX(0) rotate(0deg); }
 }
 
-.container {
-    width: 100%;
-    max-width: 680px; /* توسيع الحاوية لتناسب الشاشات الكبيرة براحة */
-    text-align: center;
-    z-index: 1;
+/* تصميم الهيدر واللوجو المتحرك */
+.site-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-.logo-container {
-    margin-bottom: 18px;
-}
-.company-logo {
-    width: 95px;
-    height: 95px;
-    object-fit: contain;
+.logo-wrapper {
+    position: relative;
+    padding: 6px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 8px;
-    border: 2px solid var(--accent-blue);
-    box-shadow: 0 0 25px rgba(56, 189, 248, 0.35);
+    /* تأثير الإضاءة والدوران النيون الأزرق الداكن */
+    background: linear-gradient(135deg, #0284c7, #1e3a8a, #0f172a);
+    box-shadow: 0 0 15px rgba(2, 132, 199, 0.4), 0 0 30px rgba(14, 116, 144, 0.2);
+    animation: logoGlow 4s infinite alternate ease-in-out;
+}
+
+.company-logo {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    background: #070f1e;
+}
+
+.brand-title {
+    font-size: 1.2rem;
+    color: var(--accent-blue);
+    font-weight: 600;
+    margin-top: 8px;
+    letter-spacing: 1px;
+}
+
+/* أنيميشن إضاءة البرواز الدائري */
+@keyframes logoGlow {
+    0% {
+        box-shadow: 0 0 10px rgba(2, 132, 199, 0.3), inset 0 0 10px rgba(56, 189, 248, 0.2);
+        transform: scale(1);
+    }
+    100% {
+        box-shadow: 0 0 25px rgba(56, 189, 248, 0.7), inset 0 0 15px rgba(2, 132, 199, 0.5);
+        transform: scale(1.03);
+    }
 }
 
 h1 {
